@@ -6,7 +6,7 @@ const Configuration = {
         'footer-leading-blank': [2, 'always'],
         'header-max-length': [2, 'always', 72],
         'scope-case': [2, 'always', 'lower-case'],
-        'subject-case': [2, 'always', ['sentence-case', 'start-case', 'pascal-case', 'upper-case']],
+        'subject-case': [2, 'always', ['lower-case', 'camel-case', 'sentence-case', 'start-case', 'pascal-case', 'upper-case']],
         'subject-empty': [2, 'never'],
         'subject-full-stop': [2, 'never', '.'],
         'subject-max-length': [2, 'always', 70],

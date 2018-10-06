@@ -7,7 +7,6 @@
   ],
   "rules": {
     "ordered-imports": false,
-
     "member-access": [false],
     "member-ordering": [false],
     "trailing-comma": false,

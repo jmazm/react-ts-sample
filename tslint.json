@@ -1,0 +1,43 @@
+{
+  "extends": [
+    "tslint:recommended",
+    "tslint-config-standard",
+    "tslint-react",
+    "tslint-config-prettier"
+  ],
+  "rules": {
+    "ordered-imports": false,
+
+    "member-access": [false],
+    "member-ordering": [false],
+    "trailing-comma": false,
+    "no-empty": false, // 允许空的块
+    "no-submodule-imports": false,
+    "no-implicit-dependencies": false, // 允许在项目的package.json中导入未列为依赖项的模块
+    "no-eval": true, // 不允许使用eval
+    "no-duplicate-variable": true, // 构造函数两次用super会发出警告
+
+    "triple-equals": [true, "allow-undefined-check"], 
+    "arrow-parens": [false], // 箭头函数定义的参数需要括号
+    "semicolon": [true, "always", "ignore-bound-class-methods"],
+    "object-literal-sort-keys": false,
+    "interface-name": false,
+
+    "no-duplicbate-imports": true,
+    "jsx-alignment": true,
+    "jsx-no-bind": true,
+    "jsx-no-lambda": false,
+    "jsx-no-multiline-js": false,
+    "max-classes-per-file": false,
+    "no-var-keyword": true,
+    "no-unused-variable": true,
+    "no-console": [
+      true,
+      "debug",
+      "info",
+      "time",
+      "timeEnd",
+      "trace"
+    ]
+  }
+}

@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server",
-    "commitmsg": "commitlint -e $GIT_PARAMS"
+    "start": "webpack-dev-server"
   },
   "author": "",
   "license": "ISC",
@@ -36,5 +35,10 @@
     "path": "^0.12.7",
     "react": "^16.5.2",
     "react-dom": "^16.5.2"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e $GIT_PARAMS"
+    }
   }
 }

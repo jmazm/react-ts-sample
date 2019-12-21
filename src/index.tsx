@@ -1,20 +1,15 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-import Hello from './pages/Hello';
+import RouteMap from './routes';
 
-class App extends React.Component {  
-    render () {
-        return (
-            <div>
-                <Hello/>
-            </div>
-        )
-    }
+
+const render = (RouteMap: any) => {
+    ReactDOM.render(
+        <RouteMap/>,
+        document.getElementById('root') as HTMLElement
+    )
+    
 }
 
-ReactDOM.render(
-    <App/>,
-    document.getElementById('root')
-)
-
+render(RouteMap);

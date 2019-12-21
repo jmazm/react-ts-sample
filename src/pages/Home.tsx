@@ -1,7 +1,13 @@
 // import * as React from 'react';
 import React from 'react';
 
-export default class Hello extends React.Component {
+interface IProps {}
+interface IState {
+    infoList: any[];
+    age: number;
+}
+
+export default class Hello extends React.Component<IProps, IState> {
     constructor (props: any) {
         super(props);
         this.state = {

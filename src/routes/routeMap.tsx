@@ -1,6 +1,6 @@
 import MagnifyingGlass from '../pages/MagnifyingGlass';
 import Capsule from '../pages/Capsule';
-const basicPath = '/demo/';
+// const basicPath = '/demo/';
 
 let map = [
     {

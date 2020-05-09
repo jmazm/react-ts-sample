@@ -1,6 +1,6 @@
 // import * as React from 'react';
 import React from 'react';
-import RouteMap from '../routes/routeMap';
+// import RouteMap from '../routes/routeMap';
 
 interface IProps {}
 interface IState {
@@ -13,13 +13,13 @@ export default class Hello extends React.Component<IProps, IState> {
     render () {
         return (
             <div>
-              <ul>
+              {/* <ul>
                 {
                     RouteMap.map((item, index) => {
                         <li><a href={}></a></li>
                     })
                 }
-              </ul>
+              </ul> */}
             </div>
         )
     }

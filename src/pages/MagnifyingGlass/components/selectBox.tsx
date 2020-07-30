@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import '../style/index.less';
+import '../index.less';
 
 interface Props {
     glassWidth: number;
@@ -8,7 +8,7 @@ interface Props {
     glassX: number;
 }
 
-export default class ComponentRenderer extends Component<Props, any> {
+export default class SelectBox extends Component<Props, any> {
   constructor(props: Props, context: any) {
     super(props, context);
   }
@@ -48,15 +48,15 @@ export default class ComponentRenderer extends Component<Props, any> {
 
     return (
         <div className="glass-select-box" style={boxStyle}>
-            <div className="glass-frame"></div>
-            <div className="glass-select-line line-top" style={topSize}></div>
-            <div className="glass-select-line line-right" style={rightSize}></div>
-            <div className="glass-select-line line-bottom" style={bottomSize}></div>
-            <div className="glass-select-line line-left" style={leftSize}></div>
-            <div className="glass-select-point point-left-top"></div>
-            <div className="glass-select-point point-right-top"></div>
-            <div className="glass-select-point point-left-bottom"></div>
-            <div className="glass-select-point point-right-bottom"></div>
+            <div className="glass-frame"/>
+            <div className="glass-select-line line-top" style={topSize}/>
+            <div className="glass-select-line line-right" style={rightSize}/>
+            <div className="glass-select-line line-bottom" style={bottomSize}/>
+            <div className="glass-select-line line-left" style={leftSize}/>
+            <div className="glass-select-point point-left-top"/>
+            <div className="glass-select-point point-right-top"/>
+            <div className="glass-select-point point-left-bottom"/>
+            <div className="glass-select-point point-right-bottom"/>
         </div>
     );
   }

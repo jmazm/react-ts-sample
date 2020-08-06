@@ -9,7 +9,6 @@ console.error(SOURCE_DIR)
 
 
 module.exports = {
-  entry: path.resolve(SOURCE_DIR, 'index.tsx'),
   output: {
     filename: 'bundle.js',
     path: DIST_DIR
@@ -61,7 +60,12 @@ module.exports = {
           //   // noIeCompat: true
           // }
         }]
-      }
+      },
+      {
+        test: /\.scss/,
+        include: /node_modules/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
     ]
   },
   plugins: [
@@ -74,15 +78,12 @@ module.exports = {
   resolve: {
     alias: {
       '@': SOURCE_DIR,
+      '@common': path.resolve(process.cwd(), 'client/common'),
+      '@modules': path.resolve(process.cwd(), 'client/modules'),
     },
     modules: ['src', 'node_modules'],
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.react.js'],
     mainFields: ['browser', 'jsnext:main', 'main'],
   },
   target: 'web',
-  devServer: {
-    port: 7000,
-    historyApiFallback: true,
-    inline: true,
-  }
 };

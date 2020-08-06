@@ -32,10 +32,13 @@
         ],
         "paths": {
             "@/*": ["./src/*"],
+            "@common/*": ["./client/common/*"],
+            "@modules/*": ["./client/modules/*"]
         },
     },
     "include": [
-        "./src/**/*"
+        "./src/**/*",
+        "./client/**/*"
     ],
     "exclude": [
         "node_modules"

@@ -1,12 +1,22 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const {merge} = require('webpack-merge');
+const base = require('./webpack.base.config');
+
+const entryObj = require('./entry').getEntries();
 
 const ROOT = process.cwd();
 const DIST_DIR = path.resolve(ROOT, 'dist');
-const SOURCE_DIR = path.resolve(ROOT, 'src');
 
-module.exports = {
-  entry: path.resolve(SOURCE_DIR, 'index.tsx'),
+module.exports = merge(base, {
+  mode: 'production',
+  entry: () => {
+    const entries = {};
+    for (const entry in entryObj) {
+      entries[key] = ['webpack-hot-middleware/client?path=http://127.0.0.1:7000/__webpack_hmr', entryObj[entry].path]
+    }
+
+    return entries;
+  },
   output: {
     filename: 'bundle.js',
     path: DIST_DIR
@@ -15,62 +25,4 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json']
   },
-  module: {
-    rules: [{
-        enforce: 'pre',
-        test: /\.js$/,
-        use: [
-          "source-map-loader"
-        ]
-      },
-      {
-        enforce: 'pre',
-        test: /\.tsx?$/,
-        use: [
-          "source-map-loader"
-        ]
-      },
-      {
-        test: /\.tsx?$/,
-        use: [
-          'babel-loader',
-          'ts-loader'
-        ],
-        exclude: /node_modules/
-      },
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
-      },
-      {
-        test: /\.less$/,
-        use: [{
-          loader: 'style-loader'
-        }, {
-          loader: 'css-loader'
-        }, {
-          loader: 'less-loader',
-          // options: {
-          //   strictMath: true,
-          //   // noIeCompat: true
-          // }
-        }]
-      }
-    ]
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve(SOURCE_DIR, 'index.html'),
-      filename: 'index.html',
-      inject: true
-    })
-  ],
-  devServer: {
-    port: 7000,
-    historyApiFallback: true,
-    inline: true,
-  }
-};
+})

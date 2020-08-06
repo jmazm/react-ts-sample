@@ -5,14 +5,9 @@ import Hook from '../pages/Hook';
 // import routeMap from './routeMap';
 import HOME from '../pages/Home';
 import RenderPropDemo from '../pages/RenderProp';
+import Echarts from '../pages/Echarts'
 
 export default class RouteMap extends Component {
-    // private getRoute = () => {
-    //     const basic = '/demo/';
-    //     return routeMap.map((route, index) => {
-    //         return <Route key={index} path={ `${basic}${route.name}` } component={route.component}/>;
-    //     });
-    // }
 
     render () {
        return (
@@ -22,9 +17,7 @@ export default class RouteMap extends Component {
                 <Route path="/capsule" exact={true} component={Capsule} />
                 <Route path="/hook" exact={true} component={Hook}/>
                 <Route path="/renderProp" exact={true} component={RenderPropDemo}/>
-                {/* {
-                    this.getRoute()
-                } */}
+                <Route path="/echarts" exact={true} component={Echarts}/>
             </Switch>
         </HashRouter>
        );

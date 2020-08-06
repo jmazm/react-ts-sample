@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { HashRouter, Switch, Route } from 'react-router-dom';
-import Capsule from '../pages/Capsule';
-import Hook from '../pages/Hook';
+import Capsule from '@/pages/Capsule';
+import Hook from '@/pages/Hook';
 // import routeMap from './routeMap';
-import HOME from '../pages/Home';
-import RenderPropDemo from '../pages/RenderProp';
-import Echarts from '../pages/Echarts'
+import HOME from '@/pages/Home';
+import RenderPropDemo from '@/pages/RenderProp';
+import Echarts from '@/pages/Echarts'
 
 export default class RouteMap extends Component {
 

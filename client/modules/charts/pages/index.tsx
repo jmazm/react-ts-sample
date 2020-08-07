@@ -4,13 +4,11 @@ import 'echarts/lib/chart/bar';
 import 'echarts/lib/chart/pie';
 import 'echarts/lib/chart/line';
 
+import { getBarOptions, getPieOptions, getLineOptions } from '@modules/charts/utils';
+import { barData, pieData, lineData } from '@modules/charts/data';
 
-import getBarOptions from './getBarOptions';
-import getPieOptions from './getPieOptions';
-import getLineOptions from './getLineOptions';
 import './index.less';
 
-import { barData, pieData, lineData } from './data';
 
 export default function() {
   const bar = useRef(null);

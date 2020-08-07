@@ -9,7 +9,7 @@
 
 import { PieProps } from '@/pages/Echarts/types';
 
-export default function getPieOptions(data: PieProps) {
+export function getPieOptions(data: PieProps) {
   const { seriesData, extraEchartOpt, totalCupCount } = data
 
   return Object.assign(

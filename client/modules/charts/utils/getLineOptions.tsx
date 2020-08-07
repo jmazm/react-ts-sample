@@ -1,8 +1,8 @@
-import { LineThemeColor, Theme, BaseThemeColor, VerticalLineColor } from './theme';
+import { LineThemeColor, Theme, BaseThemeColor, VerticalLineColor } from '@modules/charts/constants/theme';
 import get from 'lodash/get';
 import { LineProps, TimeType } from '@/pages/Echarts/types';
 
-export default function getLineOptions(data: LineProps): any {
+export function getLineOptions(data: LineProps): any {
 	const {
 		seriesData,
 		xAxisData,

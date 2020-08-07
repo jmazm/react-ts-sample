@@ -5,7 +5,6 @@ import Hook from '@/pages/Hook';
 // import routeMap from './routeMap';
 import HOME from '@/pages/Home';
 import RenderPropDemo from '@/pages/RenderProp';
-import Echarts from '@/pages/Echarts'
 
 export default class RouteMap extends Component {
 
@@ -17,7 +16,6 @@ export default class RouteMap extends Component {
                 <Route path="/capsule" exact={true} component={Capsule} />
                 <Route path="/hook" exact={true} component={Hook}/>
                 <Route path="/renderProp" exact={true} component={RenderPropDemo}/>
-                <Route path="/echarts" exact={true} component={Echarts}/>
             </Switch>
         </HashRouter>
        );

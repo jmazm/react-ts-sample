@@ -1,4 +1,4 @@
-import { Theme } from './theme';
+import { Theme } from '@modules/charts/constants/theme';
 
 export enum TimeType {
   day = 0,

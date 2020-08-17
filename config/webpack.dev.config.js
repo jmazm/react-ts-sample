@@ -21,12 +21,13 @@ module.exports = merge(base, {
         entryObj[entry].path]
     }
 
-    console.error(entries)
+    console.error('&&&&entries====', entries)
 
     return entries;
   },
   output: {
-    filename: 'bundle.js',
+    filename: '[name].js',
+    chunkFilename: '[name].chunk.js',
     path: DIST_DIR
   },
   devtool: 'source-map',

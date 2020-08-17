@@ -1,6 +1,6 @@
 import { LineThemeColor, Theme, BaseThemeColor, VerticalLineColor } from '@modules/charts/constants/theme';
 import get from 'lodash/get';
-import { LineProps, TimeType } from '@/pages/Echarts/types';
+import { LineProps, TimeType } from '@modules/charts/types';
 
 export function getLineOptions(data: LineProps): any {
 	const {

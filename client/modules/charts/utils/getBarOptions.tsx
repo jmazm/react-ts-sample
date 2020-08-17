@@ -1,7 +1,7 @@
 import { BarThemeColor, Theme, BaseThemeColor } from '@modules/charts/constants/theme';
 import echarts from 'echarts/lib/echarts';
 
-import { BarProps } from '@/pages/Echarts/types';
+import { BarProps } from '@modules/charts/types';
 
 export function getBarOptions(data: BarProps) {
   const { seriesData, xAxisData, extraEchartOpt, theme = Theme.green, username } = data;

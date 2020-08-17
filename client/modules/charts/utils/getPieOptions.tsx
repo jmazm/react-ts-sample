@@ -7,7 +7,7 @@
 //   listening = '认真听讲' // 认真听讲
 // }
 
-import { PieProps } from '@/pages/Echarts/types';
+import { PieProps } from '@modules/charts/types';
 
 export function getPieOptions(data: PieProps) {
   const { seriesData, extraEchartOpt, totalCupCount } = data

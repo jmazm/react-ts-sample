@@ -38,9 +38,9 @@
     },
     "include": [
         "./src/**/*",
-        "./client/**/*"
+        "./client/**/*",
     ],
     "exclude": [
-        "node_modules"
+        "node_modules",
     ]
 }

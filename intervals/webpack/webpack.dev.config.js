@@ -5,9 +5,7 @@ const base = require('./webpack.base.config');
 
 const entryObj = require('./entry').getEntries();
 
-const ROOT = process.cwd();
-const DIST_DIR = path.resolve(ROOT, 'dist');
-
+const { OUTPUT_DIR } = require('./config');
 
 
 
@@ -28,9 +26,10 @@ module.exports = merge(base, {
   output: {
     filename: '[name].js',
     chunkFilename: '[name].chunk.js',
-    path: DIST_DIR
+    path: OUTPUT_DIR,
+    publicPath: '/public/statics/',
   },
-  devtool: 'source-map',
+  devtool: 'eval',
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json']
   },
@@ -39,7 +38,16 @@ module.exports = merge(base, {
   ],
   devServer: {
     port: 7000,
+    hot: true,
     historyApiFallback: true,
     inline: true,
+    proxy: {
+      '/': {
+        target: 'http://localhost:7001/',
+        secure: false,
+      },
+    },
+    contentBase: './client/',
+    publicPath: '/statics/',
   }
 })

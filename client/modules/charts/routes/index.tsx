@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import { HashRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import HOME from '../pages';
 
 export default class RouteMap extends Component {
 
     render () {
        return (
-        <HashRouter>
+        <BrowserRouter>
             <Switch>
-                <Route path="/echarts" exact={true} component={HOME}/>
+                <Route path="/charts" exact={true} component={HOME}/>
             </Switch>
-        </HashRouter>
+        </BrowserRouter>
        );
     }
 }

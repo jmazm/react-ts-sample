@@ -2,8 +2,7 @@ const { Controller } = require('egg');
 
 class HomeController extends Controller {
   async index() {
-    const { ctx } = this;
-    ctx.body = await ctx.service.test.sayHi('egg');
+    await this.ctx.render('home.ejs', { title: 'view test', chunks: ['charts'] });
   }
 }
 

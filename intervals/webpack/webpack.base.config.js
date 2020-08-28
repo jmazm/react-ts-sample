@@ -1,18 +1,9 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const AssetOutputPlugin = require('../scripts/AssetOutputPlugin');
 
-const ROOT = process.cwd();
-const DIST_DIR = path.resolve(ROOT, 'dist');
-const SOURCE_DIR = path.resolve(ROOT, 'src');
-
-console.error(SOURCE_DIR)
 
 
 module.exports = {
-  output: {
-    filename: 'bundle.js',
-    path: DIST_DIR
-  },
   devtool: 'source-map',
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json']
@@ -69,15 +60,15 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve(SOURCE_DIR, 'index.html'),
-      filename: 'index.html',
-      inject: true
-    })
+    // new HtmlWebpackPlugin({
+    //   template: path.resolve(SOURCE_DIR, 'index.html'),
+    //   filename: 'index.html',
+    //   inject: true
+    // }),
+    new AssetOutputPlugin()
   ],
   resolve: {
     alias: {
-      '@': SOURCE_DIR,
       '@common': path.resolve(process.cwd(), 'client/common'),
       '@modules': path.resolve(process.cwd(), 'client/modules'),
     },

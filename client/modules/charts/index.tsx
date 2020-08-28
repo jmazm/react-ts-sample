@@ -7,9 +7,18 @@ import RouteMap from './routes';
 const render = (RouteMap: any) => {
   ReactDOM.render(
     <RouteMap />,
-    document.getElementById('root') as HTMLElement
+    document.getElementById('root') 
   );
 
 };
 
 render(RouteMap);
+
+// @ts-ignore
+if (module.hot) {
+  // @ts-ignore
+  module.hot.accept();
+  // module.hot.accept('./pages/index', () => {
+  // 	render(Mobile);
+  // })
+}

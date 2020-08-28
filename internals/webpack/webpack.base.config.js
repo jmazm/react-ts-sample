@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const AssetOutputPlugin = require('../scripts/AssetOutputPlugin');
 
 
@@ -65,7 +66,10 @@ module.exports = {
     //   filename: 'index.html',
     //   inject: true
     // }),
-    new AssetOutputPlugin()
+    new webpack.optimize.OccurrenceOrderPlugin(),
+
+    new AssetOutputPlugin(),
+
   ],
   resolve: {
     alias: {

@@ -1,28 +1,44 @@
 const path = require('path');
 const {merge} = require('webpack-merge');
+const { HashedModuleIdsPlugin } = require('webpack');
+
+
 const base = require('./webpack.base.config');
-
 const entryObj = require('./entry').getEntries();
-
-const ROOT = process.cwd();
-const DIST_DIR = path.resolve(ROOT, 'dist');
+const { OUTPUT_DIR } = require('./config');
 
 module.exports = merge(base, {
   mode: 'production',
   entry: () => {
     const entries = {};
+
     for (const entry in entryObj) {
-      entries[key] = ['webpack-hot-middleware/client?path=http://127.0.0.1:7000/__webpack_hmr', entryObj[entry].path]
+      entries[entry] = entryObj[entry].path
     }
+
+    console.error('==entries', entries)
 
     return entries;
   },
   output: {
-    filename: 'bundle.js',
-    path: DIST_DIR
+    filename: '[name].[chunkhash].bundle.js',
+    chunkFilename: '[name].[chunkhash].bundle.js',
+    path: OUTPUT_DIR,
+    publicPath: '/'
   },
-  devtool: 'source-map',
-  resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json']
+  devtool: false,
+  
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    },
+    runtimeChunk: true
   },
+  plugins: [
+    new HashedModuleIdsPlugin({
+      hashFunction: 'sha256',
+      hashDigest: 'hex',
+      hashDigestLength: 24,
+    })
+  ]
 })

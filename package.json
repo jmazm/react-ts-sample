@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "client": "cross-env NODE_ENV=development node ./internals/scripts/start/start-client.js",
+    "build": "cross-env NODE_ENV=production webpack --config ./internals/webpack/index.js",
     "start": "egg-scripts start --daemon --title=egg-server-demo",
     "stop": "egg-scripts stop --title=egg-server-demo",
     "dev": "egg-bin dev",
@@ -39,6 +40,7 @@
     "egg-mock": "^3.16.0",
     "eslint": "^6.7.2",
     "eslint-config-egg": "^8.0.0",
+    "extract-text-webpack-plugin": "4.0.0-beta.0",
     "html-webpack-plugin": "^4.3.0",
     "husky": "^4.2.5",
     "less": "^3.11.1",

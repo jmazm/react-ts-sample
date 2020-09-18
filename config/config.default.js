@@ -28,16 +28,9 @@ module.exports =  (appInfo) => {
       '.ejs': 'ejs',
     },
     root: [
-      path.join(appInfo.root, 'app/view')
+      path.join(appInfo.baseDir, 'app/view')
     ].join(',')
   }
-
-  config.proxy = [
-    {
-      host: 'http://127.0.0.1:7000',
-      match: /\/statics/,
-    },
-  ];
 
 
   // the return config will combines to EggAppConfig

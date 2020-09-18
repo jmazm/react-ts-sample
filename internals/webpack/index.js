@@ -13,6 +13,8 @@ const configMap = {
 
 const webpackConfigName = `webpack.${configMap[process.env.NODE_ENV || defaultConfig]}.config.js`
 
+console.error('webpackConfigName', webpackConfigName)
+
 let webpackConfig;
 
 if (webpackConfigs.indexOf(webpackConfigName) !== -1) {

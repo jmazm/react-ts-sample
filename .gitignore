@@ -14,3 +14,4 @@ logs/
 app/**/*.map
 test/**/*.map
 config/**/*.map
+build/

@@ -44,7 +44,8 @@ class Asset {
       }
 
       this.asset.chunks[name] = {
-        js: data
+        js: data.filter(item => /\.js$/.test(item)),
+        css: data.filter(item => /\.css$/.test(item)),
       }
     }
 

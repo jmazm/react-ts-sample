@@ -32,32 +32,32 @@ module.exports = {
         ],
         exclude: /node_modules/
       },
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
-      },
-      {
-        test: /\.less$/,
-        use: [{
-          loader: 'style-loader'
-        }, {
-          loader: 'css-loader'
-        }, {
-          loader: 'less-loader',
-          // options: {
-          //   strictMath: true,
-          //   // noIeCompat: true
-          // }
-        }]
-      },
-      {
-        test: /\.scss/,
-        include: /node_modules/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
-      },
+      // {
+      //   test: /\.css$/,
+      //   use: [
+      //     'style-loader',
+      //     'css-loader'
+      //   ]
+      // },
+      // {
+      //   test: /\.less$/,
+      //   use: [{
+      //     loader: 'style-loader'
+      //   }, {
+      //     loader: 'css-loader'
+      //   }, {
+      //     loader: 'less-loader',
+      //     // options: {
+      //     //   strictMath: true,
+      //     //   // noIeCompat: true
+      //     // }
+      //   }]
+      // },
+      // {
+      //   test: /\.scss/,
+      //   include: /node_modules/,
+      //   use: ['style-loader', 'css-loader', 'sass-loader'],
+      // },
     ]
   },
   plugins: [

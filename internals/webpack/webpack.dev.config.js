@@ -5,7 +5,7 @@ const base = require('./webpack.base.config');
 
 const entryObj = require('./entry').getEntries();
 
-const { OUTPUT_DIR } = require('./config');
+const { OUTPUT_DIR, PUBLIC_PATH } = require('./config');
 
 
 
@@ -27,7 +27,7 @@ module.exports = merge(base, {
     filename: '[name].js',
     chunkFilename: '[name].chunk.js',
     path: OUTPUT_DIR,
-    publicPath: '/public/statics/',
+    publicPath: PUBLIC_PATH,
   },
   devtool: 'eval',
   resolve: {

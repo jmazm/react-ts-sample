@@ -14,28 +14,24 @@ class AssetOutputPlugin {
       timings: false
     });
 
-    const assetsByChunkName = stats.assetsByChunkName;
-    console.log(chalk.blue('------------------------------assetsByChunkName start------------------------------'));
-    console.log(assetsByChunkName)
-    console.log(chalk.blue('------------------------------assetsByChunkName end------------------------------'));
+    const entries = stats.entrypoints;
+    console.log(chalk.blue('------------------------------entries assets start------------------------------'));
+    console.log(entries)
+    console.log(chalk.blue('------------------------------entries assets end------------------------------'));
 
-    let resultList = {};
+    const resultList = entries.assets || [];
 
-    if (process.env.NODE_ENV === 'development') {
-      resultList = assetsByChunkName;
-    }
-
-
-    console.log(chalk.green('------------------------------assetsByChunkName write start------------------------------'));
+   
+    console.log(chalk.green('------------------------------entries assets write start------------------------------'));
     try {
       assetHelper.setChunks(resultList).save();
-      console.log(JSON.stringify(resultList));
+      console.log('resultList', JSON.stringify(resultList));
     } catch(err) {
       console.log(resultList);
       console.log(e);
     }
 
-    console.log(chalk.green('------------------------------assetsByChunkName write end------------------------------'));
+    console.log(chalk.green('------------------------------entries assets write end------------------------------'));
 
     callback();
   }
